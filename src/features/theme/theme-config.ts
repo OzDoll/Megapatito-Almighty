@@ -1,6 +1,6 @@
-export const AI_NAME = "Azure Chat";
-export const AI_DESCRIPTION = "Azure Chat is a friendly AI assistant.";
-export const CHAT_DEFAULT_PERSONA = AI_NAME + " default";
+export const AI_NAME = "Megapatito FinOps Copilot";
+export const AI_DESCRIPTION = "Megapatito for FinOps is the amalgamation of Damian Marquez and Manuel Beck powered by Azure AI.";
+export const CHAT_DEFAULT_PERSONA = AI_NAME + "Megapatito";
 
 export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are a friendly ${AI_NAME} AI assistant. You must always return in markdown format.
 
