@@ -1,4 +1,4 @@
-export const AI_NAME = "Megapatito Allmighty";
+export const AI_NAME = "Megapatito Almighty";
 export const AI_DESCRIPTION = "Megapatito AI is a project by Damian Marquez and Manuel Beck, powered by Azure OpenAI.";
 export const CHAT_DEFAULT_PERSONA = AI_NAME + "Megapatito";
 
