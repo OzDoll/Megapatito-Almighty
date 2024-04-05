@@ -1,8 +1,10 @@
 # Introduction
 
-Megapatito Copilot is a project powered by Azure OpenAI using the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/).
+<p align="center">
+  <img src="https://i.imgur.com/f4G04lV.png">
+</p>
 
-![](https://i.imgur.com/3ysK2Kj.png)
+Megapatito Copilot is a project powered by Azure OpenAI using the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/).
 
 # Contributing
 
