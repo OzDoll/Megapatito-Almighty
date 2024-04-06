@@ -17,6 +17,8 @@ export const ChatApiMultimodal = (props: {
   return openAI.beta.chat.completions.stream(
     {
       model: "",
+      temperature: 0.2,
+      top_p: 0.5,
       stream: true,
       max_tokens: 4096,
       messages: [

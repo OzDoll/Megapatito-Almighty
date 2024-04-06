@@ -65,6 +65,8 @@ ${userMessage}
 
   const stream: ChatCompletionStreamParams = {
     model: "",
+    temperature: 0.2,
+    top_p: 0.5,
     stream: true,
     messages: [
       {
