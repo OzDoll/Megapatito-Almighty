@@ -1,3 +1,5 @@
+"use client";
+
 import { showError } from "@/features/globals/global-message-store";
 import {
   AudioConfig,
