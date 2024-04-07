@@ -9,7 +9,10 @@ const requireAuth: string[] = [
   "/persona",
   "/prompt"
 ];
-const requireAdmin: string[] = ["/reporting"];
+const requireAdmin: string[] = [
+  "/reporting",
+  "/persona" // Added to require admin privileges
+];
 
 export async function middleware(request: NextRequest) {
   const res = NextResponse.next();
@@ -38,7 +41,7 @@ export async function middleware(request: NextRequest) {
   return res;
 }
 
-// note that middleware is not applied to api/auth as this is required to logon (i.e. requires anon access)
+// note that middleware is not applied to api/auth as this is required to logon (i.e. requires anon access) - Update the matcher config to include the persona path
 export const config = {
   matcher: [
     "/unauthorized/:path*",
@@ -46,5 +49,6 @@ export const config = {
     "/api/chat:path*",
     "/api/images:path*",
     "/chat/:path*",
+    "/persona/:path*", // Added to match persona path
   ],
 };
