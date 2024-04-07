@@ -8,15 +8,22 @@ export const Microphone = (props: {
   startRecognition: () => void;
   stopRecognition: () => void;
 }) => {
+  const startRecognition = () => {
+    props.startRecognition();
+  };
+
+  const stopRecognition = () => {
+    props.stopRecognition();
+  };
+
   return (
     <>
       {props.isPlaying ? (
         <Button
           size="icon"
           type="button"
-          variant="ghost"
+          variant={"ghost"}
           onClick={props.stopPlaying}
-          aria-label="Stop speech input"
         >
           <Square size={16} />
         </Button>
@@ -24,10 +31,10 @@ export const Microphone = (props: {
         <Button
           type="button"
           size="icon"
-          variant="ghost"
-          onMouseDown={props.startRecognition}
-          onMouseUp={props.stopRecognition}
-          onMouseLeave={props.stopRecognition}
+          variant={"ghost"}
+          onMouseDown={startRecognition}
+          onMouseUp={stopRecognition}
+          onMouseLeave={stopRecognition}
           className={
             props.isMicrophoneReady ? "bg-red-400 hover:bg-red-400" : ""
           }
