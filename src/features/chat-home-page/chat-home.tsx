@@ -33,7 +33,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
           }
           description={AI_DESCRIPTION}
         ></Hero>
-        <div className="container max-w-4xl flex gap-20 flex-col">
+        <div className="container max-w-5xl flex gap-20 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
 
@@ -58,7 +58,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
             <h2 className="text-2xl font-bold mb-3">Personas</h2>
 
             {props.personas && props.personas.length > 0 ? (
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-4 gap-3">
                 {props.personas.map((persona) => {
                   return (
                     <PersonaCard
