@@ -15,28 +15,31 @@ interface ChatPersonaProps {
 }
 
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
+
   return (
     <ScrollArea className="flex-1">
       <main className="flex flex-1 flex-col gap-6 pb-6">
-        <Hero
-          title={
-            <>
-              <Image
-                src={"/ai-icon.png"}
-                width={60}
-                height={60}
-                quality={100}
-                alt="ai-icon"
-              />{" "}
-              {AI_NAME}
-            </>
-          }
-          description={AI_DESCRIPTION}
-        ></Hero>
+        {/* Centered Hero component with image on top of AI_NAME */}
+        <div className="flex justify-center items-center h-screen"> {/* Adjust the height as needed */}
+          <Hero
+            title={
+              <div className="flex flex-col items-center"> {/* This will stack the image and AI_NAME */}
+                <Image
+                  src={"/ai-icon.png"}
+                  width={60}
+                  height={60}
+                  quality={100}
+                  alt="ai-icon"
+                />
+                <span>{AI_NAME}</span> {/* AI_NAME on a new line */}
+              </div>
+            }
+            description={AI_DESCRIPTION}
+          ></Hero> {/* Closing tag for the Hero component */}
+        </div>
         <div className="container max-w-4xl flex gap-20 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
-
             {props.extensions && props.extensions.length > 0 ? (
               <div className="grid grid-cols-3 gap-3">
                 {props.extensions.map((extension) => {
