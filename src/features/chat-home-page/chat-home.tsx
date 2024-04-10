@@ -18,60 +18,56 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
   return (
     <ScrollArea className="flex-1">
       <main className="flex flex-1 flex-col gap-6 pb-6">
-        <Hero
-          title={
-            <>
-              <Image
-                src={"/ai-icon.png"}
-                width={60}
-                height={60}
-                quality={100}
-                alt="ai-icon"
-              />{" "}
-              {AI_NAME}
-            </>
-          }
-          description={AI_DESCRIPTION}
-        ></Hero>
-        <div className="container max-w-4xl flex gap-20 flex-col">
+        {/* Centered Hero component with image on top of AI_NAME */}
+        <div className="flex justify-center items-center"> {/* Centering without extra space */}
+          <Hero
+            title={
+              <div className="flex flex-col items-center"> {/* This will stack the image and AI_NAME */}
+                <Image
+                  src={"/ai-icon.png"}
+                  width={60}
+                  height={60}
+                  quality={100}
+                  alt="ai-icon"
+                />
+                <span>{AI_NAME}</span> {/* AI_NAME on a new line */}
+              </div>
+            }
+            description={AI_DESCRIPTION}
+          />
+        </div>
+        <div className="container max-w-4xl mx-auto flex gap-20 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
-
             {props.extensions && props.extensions.length > 0 ? (
               <div className="grid grid-cols-3 gap-3">
-                {props.extensions.map((extension) => {
-                  return (
-                    <ExtensionCard
-                      extension={extension}
-                      key={extension.id}
-                      showContextMenu={false}
-                    />
-                  );
-                })}
+                {props.extensions.map((extension) => (
+                  <ExtensionCard
+                    extension={extension}
+                    key={extension.id}
+                    showContextMenu={false}
+                  />
+                ))}
               </div>
-            ) :
-              <p className="text-muted-foreground max-w-xl">No extentions created</p>
-            }
-
+            ) : (
+              <p className="text-muted-foreground max-w-xl">No extensions created</p>
+            )}
           </div>
           <div>
             <h2 className="text-2xl font-bold mb-3">Personas</h2>
-
             {props.personas && props.personas.length > 0 ? (
               <div className="grid grid-cols-3 gap-3">
-                {props.personas.map((persona) => {
-                  return (
-                    <PersonaCard
-                      persona={persona}
-                      key={persona.id}
-                      showContextMenu={false}
-                    />
-                  );
-                })}
+                {props.personas.map((persona) => (
+                  <PersonaCard
+                    persona={persona}
+                    key={persona.id}
+                    showContextMenu={false}
+                  />
+                ))}
               </div>
-            ) :
+            ) : (
               <p className="text-muted-foreground max-w-xl">No personas created</p>
-            }
+            )}
           </div>
         </div>
         <AddExtension />
