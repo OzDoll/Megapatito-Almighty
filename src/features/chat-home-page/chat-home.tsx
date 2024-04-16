@@ -17,7 +17,7 @@ interface ChatPersonaProps {
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
   return (
     <ScrollArea className="flex-1">
-      <main className="flex flex-1 flex-col gap-6 pb-6">
+      <main className="flex flex-1 flex-col gap-6 pb-3">
         <Hero
           title={
             <>
@@ -33,7 +33,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
           }
           description={AI_DESCRIPTION}
         ></Hero>
-        <div className="container max-w-5xl flex gap-10 flex-col">
+        <div className="container max-w-5xl flex gap-12 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
 
