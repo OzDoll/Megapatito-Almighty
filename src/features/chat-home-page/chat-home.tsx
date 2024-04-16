@@ -17,7 +17,7 @@ interface ChatPersonaProps {
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
   return (
     <ScrollArea className="flex-1">
-      <main className="flex flex-1 flex-col gap-4 pb-6">
+      <main className="flex flex-1 flex-col gap-6 pb-6">
         <Hero
           title={
             <>
@@ -33,12 +33,12 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
           }
           description={AI_DESCRIPTION}
         ></Hero>
-        <div className="container max-w-5xl flex gap-15 flex-col">
+        <div className="container max-w-5xl flex gap-10 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
 
             {props.extensions && props.extensions.length > 0 ? (
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 gap-3">
                 {props.extensions.map((extension) => {
                   return (
                     <ExtensionCard
@@ -58,7 +58,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
             <h2 className="text-2xl font-bold mb-3">Personas</h2>
 
             {props.personas && props.personas.length > 0 ? (
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 gap-3">
                 {props.personas.map((persona) => {
                   return (
                     <PersonaCard
