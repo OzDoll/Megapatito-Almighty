@@ -1,6 +1,6 @@
 "use client";
 import { Hero, HeroButton } from "@/features/ui/hero";
-import { Atom, Languages, VenetianMask } from "lucide-react";
+import { Atom, Languages, Bot } from "lucide-react";
 import { personaStore } from "../persona-store";
 
 export const PersonaHero = () => {
@@ -8,7 +8,7 @@ export const PersonaHero = () => {
     <Hero
       title={
         <>
-          <VenetianMask size={36} strokeWidth={1.5} /> Persona
+          <Bot size={36} strokeWidth={1.5} /> Persona
         </>
       }
       description={`  Persona is a representation of a personality that you can use to
@@ -17,7 +17,7 @@ export const PersonaHero = () => {
       <HeroButton
         title="New Persona"
         description="Create a new personality that you can use to have a conversation with."
-        icon={<VenetianMask />}
+        icon={<Bot />}
         onClick={() =>
           personaStore.newPersonaAndOpen({
             name: "",

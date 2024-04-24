@@ -12,7 +12,7 @@ import {
   MessageCircle,
   PocketKnife,
   Sheet,
-  VenetianMask,
+  Bot,
 } from "lucide-react";
 import { getCurrentUser } from "../auth-page/helpers";
 import { MenuLink } from "./menu-link";
@@ -47,7 +47,7 @@ export const MainMenu = async () => {
              <>
              <MenuItem tooltip="Persona">
                <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
-                 <VenetianMask {...menuIconProps} />
+                 <Bot {...menuIconProps} />
                </MenuLink>
              </MenuItem>
              <MenuItem tooltip="Extensions">
