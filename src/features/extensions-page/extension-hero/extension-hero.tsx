@@ -2,7 +2,7 @@
 
 import { AI_NAME } from "@/features/theme/theme-config";
 import { Hero } from "@/features/ui/hero";
-import { BrainCircuit } from "lucide-react";
+import { Waypoints } from "lucide-react";
 import { AISearch } from "./ai-search-issues";
 import { BingSearch } from "./bing-search";
 import { NewExtension } from "./new-extension";
@@ -12,7 +12,7 @@ export const ExtensionHero = () => {
     <Hero
       title={
         <>
-          <BrainCircuit size={36} strokeWidth={1.5} /> Extensions
+          <Waypoints size={36} strokeWidth={1.5} /> Extensions
         </>
       }
       description={`Seamlessly connect ${AI_NAME} with internal APIs or external
