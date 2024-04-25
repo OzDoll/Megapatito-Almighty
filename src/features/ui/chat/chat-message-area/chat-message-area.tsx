@@ -3,7 +3,7 @@ import { cn } from "@/ui/lib";
 import {
   CheckIcon,
   ClipboardIcon,
-  PocketKnife,
+  BrainCircuit,
   UserCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -56,7 +56,7 @@ export const ChatMessageArea = (props: {
     case "tool":
     case "function":
       profile = (
-        <PocketKnife
+        <BrainCircuit
           size={28}
           strokeWidth={1.4}
           className="text-muted-foreground"
