@@ -10,7 +10,7 @@ import {
   Book,
   Home,
   MessageCircle,
-  Waypoints,
+  Boxes,
   Sheet,
   Bot,
 } from "lucide-react";
@@ -52,7 +52,7 @@ export const MainMenu = async () => {
              </MenuItem>
              <MenuItem tooltip="Extensions">
                <MenuLink href="/extensions" ariaLabel="Go to the Extensions configuration page">
-                 <Waypoints {...menuIconProps} />
+                 <Boxes {...menuIconProps} />
                </MenuLink>
              </MenuItem>
              <MenuItem tooltip="Reporting">

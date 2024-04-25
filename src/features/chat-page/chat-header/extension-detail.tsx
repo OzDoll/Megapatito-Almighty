@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/features/ui/sheet";
 import { Switch } from "@/features/ui/switch";
-import { Waypoints } from "lucide-react";
+import { Boxes } from "lucide-react";
 import { FC } from "react";
 import { chatStore } from "../chat-store";
 
@@ -36,7 +36,7 @@ export const ExtensionDetail: FC<Props> = (props) => {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant={"outline"} className="gap-2" disabled={props.disabled} aria-label="Current Chat Extensions Menu">
-          <Waypoints size={16} /> {installedCount} ({totalCount})
+          <Boxes size={16} /> {installedCount} ({totalCount})
         </Button>
       </SheetTrigger>
       <SheetContent className="min-w-[480px] sm:w-[540px] flex flex-col">
