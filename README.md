@@ -6,6 +6,20 @@
 
 Megapatito AI is a project powered by Azure OpenAI, based in the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/).
 
+### Azure Portal Deployment
+
+> [!WARNING]
+> This button will only create Azure resources. You will still need to deploy the application by following the [deploy to Azure section](/docs/4-deploy-to-azure.md) to build and deploy the application using GitHub actions.
+
+Click on the Deploy to Azure button to deploy the Azure resources for the application.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/anzappazurechatgpt)
+
+> [!IMPORTANT]
+> The application is protected by an identity provider and follow the steps in [Add an identity provider](/docs/5-add-identity.md) section for adding authentication to your app.
+
+[Next](./docs/1-introduction.md)
+
 # Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
