@@ -43,7 +43,7 @@ export const GetDefaultExtensions = async (props: {
     type: "function",
     function: {
       function: async (args: any) =>
-        await executeBingSearch(
+        await executeAzureSearch(
           args,
           props.signal
         ),
@@ -61,8 +61,8 @@ export const GetDefaultExtensions = async (props: {
         },
       },
       description:
-        "Retrieve up to date Azure documentation with AI search.",
-      name: "BingSearch",
+        "You must always use the function when asked Azure related questions, to retrieve Azure documentation, or to resolve Azure related queries",
+      name: "AzureSearch",
     },
   });
 
@@ -153,11 +153,11 @@ async function executeCreateImage(
 }
 
 // Function to execute Bing Search
-async function executeBingSearch(
+async function executeAzureSearch(
   args: { query: { BING_SEARCH_QUERY: string } },
   signal: AbortSignal
 ) {
-  console.log("BingSearch called with query:", args.query.BING_SEARCH_QUERY);
+  console.log("AzureSearch called with query:", args.query.BING_SEARCH_QUERY);
 
   if (!args.query.BING_SEARCH_QUERY) {
     return "No search query provided";
