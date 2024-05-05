@@ -38,6 +38,34 @@ export const GetDefaultExtensions = async (props: {
     },
   });
 
+   // Add Bing Search Extension
+   defaultExtensions.push({
+    type: "function",
+    function: {
+      function: async (args: any) =>
+        await executeBingSearch(
+          args,
+          props.signal
+        ),
+      parse: (input: string) => JSON.parse(input),
+      parameters: {
+        type: "object",
+        properties: {
+          query: {
+            type: "object",
+            properties: {
+              BING_SEARCH_QUERY: { type: "string" },
+            },
+            required: ["BING_SEARCH_QUERY"],
+          },
+        },
+      },
+      description:
+        "Use BingSearch to search for information on the web to bring up to date information",
+      name: "BingSearch",
+    },
+  });
+
   // Add any other default Extension here
 
   return {
@@ -123,34 +151,6 @@ async function executeCreateImage(
     };
   }
 }
-
-// Add Bing Search Extension
-defaultExtensions.push({
-  type: "function",
-  function: {
-    function: async (args: any) =>
-      await executeBingSearch(
-        args,
-        props.signal
-      ),
-    parse: (input: string) => JSON.parse(input),
-    parameters: {
-      type: "object",
-      properties: {
-        query: {
-          type: "object",
-          properties: {
-            BING_SEARCH_QUERY: { type: "string" },
-          },
-          required: ["BING_SEARCH_QUERY"],
-        },
-      },
-    },
-    description:
-      "Retrieve up to date Azure documentation with AI search",
-    name: "azuredocsearch",
-  },
-});
 
 // Function to execute Bing Search
 async function executeBingSearch(
