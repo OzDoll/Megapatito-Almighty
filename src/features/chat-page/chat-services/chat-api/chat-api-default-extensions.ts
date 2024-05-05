@@ -61,7 +61,7 @@ export const GetDefaultExtensions = async (props: {
         },
       },
       description:
-        "Use BingSearch to search for information on the web to bring up to date information",
+        "Retrieve up to date Azure documentation with AI search.",
       name: "BingSearch",
     },
   });
