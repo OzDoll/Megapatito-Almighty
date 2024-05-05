@@ -157,7 +157,7 @@ async function executeBingSearch(
   args: { query: { BING_SEARCH_QUERY: string } },
   signal: AbortSignal
 ) {
-  console.log("AI Search called with query:", args.query.BING_SEARCH_QUERY);
+  console.log("BingSearch called with query:", args.query.BING_SEARCH_QUERY);
 
   if (!args.query.BING_SEARCH_QUERY) {
     return "No search query provided";
@@ -188,11 +188,13 @@ async function executeBingSearch(
     const searchData = await searchResponse.json();
     return searchData;
   } catch (error) {
-    console.error("🔴 Bing Search error:\n", error);
+    // Type assertion for the error object
+    const errorMessage = (error as Error).message || "An unknown error occurred";
+    console.error("🔴 Bing Search error:\n", errorMessage);
     return {
       error:
         "There was an error performing the search: " +
-        error.message +
+        errorMessage +
         ". Return this message to the user and halt execution.",
     };
   }
