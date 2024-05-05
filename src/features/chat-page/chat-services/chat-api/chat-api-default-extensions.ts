@@ -173,7 +173,7 @@ async function executeAzureSearch(
   }
 
   const endpoint = "https://api.bing.microsoft.com/v7.0/custom/search";
-  const customConfigId = "79ad8e2e-9988-474c-9e69-9466703a3773";
+  const customConfigId = process.env.AZURE_BING_CUSTOM_CONFIG_ID;
   const market = "en-US";
   const searchQuery = args.query.BING_SEARCH_QUERY;
 
