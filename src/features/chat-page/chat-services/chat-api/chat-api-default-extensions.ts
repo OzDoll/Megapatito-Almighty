@@ -163,7 +163,15 @@ async function executeAzureSearch(
     return "No search query provided";
   }
 
-  const subscriptionKey = "6df67fda77624697a83b932cd80323bd";
+  const subscriptionKey = process.env.AZURE_BING_SUBSCRIPTION_KEY;
+  if (!subscriptionKey) {
+    console.error("🔴 Azure Search error: Bing Subscription key is not set in environment variables.");
+    return {
+      error:
+        "Subscription key is missing. Please set the AZURE_BING_SUBSCRIPTION_KEY environment variable.",
+    };
+  }
+
   const endpoint = "https://api.bing.microsoft.com/v7.0/custom/search";
   const customConfigId = "79ad8e2e-9988-474c-9e69-9466703a3773";
   const market = "en-US";
