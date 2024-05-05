@@ -123,3 +123,77 @@ async function executeCreateImage(
     };
   }
 }
+
+// Add Bing Search Extension
+defaultExtensions.push({
+  type: "function",
+  function: {
+    function: async (args: any) =>
+      await executeBingSearch(
+        args,
+        props.signal
+      ),
+    parse: (input: string) => JSON.parse(input),
+    parameters: {
+      type: "object",
+      properties: {
+        query: {
+          type: "object",
+          properties: {
+            BING_SEARCH_QUERY: { type: "string" },
+          },
+          required: ["BING_SEARCH_QUERY"],
+        },
+      },
+    },
+    description:
+      "Retrieve up to date Azure documentation with AI search",
+    name: "azuredocsearch",
+  },
+});
+
+// Function to execute Bing Search
+async function executeBingSearch(
+  args: { query: { BING_SEARCH_QUERY: string } },
+  signal: AbortSignal
+) {
+  console.log("AI Search called with query:", args.query.BING_SEARCH_QUERY);
+
+  if (!args.query.BING_SEARCH_QUERY) {
+    return "No search query provided";
+  }
+
+  const subscriptionKey = "6df67fda77624697a83b932cd80323bd";
+  const endpoint = "https://api.bing.microsoft.com/v7.0/custom/search";
+  const customConfigId = "79ad8e2e-9988-474c-9e69-9466703a3773";
+  const market = "en-US";
+  const searchQuery = args.query.BING_SEARCH_QUERY;
+
+  const url = `${endpoint}?q=${encodeURIComponent(
+    searchQuery
+  )}&customconfig=${customConfigId}&mkt=${market}`;
+
+  try {
+    const searchResponse = await fetch(url, {
+      headers: {
+        "Ocp-Apim-Subscription-Key": subscriptionKey,
+      },
+      signal,
+    });
+
+    if (!searchResponse.ok) {
+      throw new Error(`HTTP error! status: ${searchResponse.status}`);
+    }
+
+    const searchData = await searchResponse.json();
+    return searchData;
+  } catch (error) {
+    console.error("🔴 Bing Search error:\n", error);
+    return {
+      error:
+        "There was an error performing the search: " +
+        error.message +
+        ". Return this message to the user and halt execution.",
+    };
+  }
+}
