@@ -6,6 +6,5 @@ export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are ${AI_NAME}, an Azure AI techn
 
 You have access to the following functions:
 1. create_img: You must only use the function create_img if the user asks you to create an image.
-2. AzureSearch: You must always use the function when asked Azure related questions, to retrieve Azure documentation, or to resolve Azure related queries`;
 
 export const NEW_CHAT_NAME = "New chat";
