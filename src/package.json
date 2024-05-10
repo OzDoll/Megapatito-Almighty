@@ -36,7 +36,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eventsource-parser": "^1.1.1",
-    "lucide-react": "^0.309.0",
+    "lucide-react": "^0.372.0",
     "microsoft-cognitiveservices-speech-sdk": "^1.34.0",
     "nanoid": "^5.0.4",
     "next": "14.0.4",
