@@ -13,6 +13,7 @@ import {
   Boxes,
   Sheet,
   Bot,
+  AreaChart,
 } from "lucide-react";
 import { getCurrentUser } from "../auth-page/helpers";
 import { MenuLink } from "./menu-link";
@@ -42,6 +43,11 @@ export const MainMenu = async () => {
             <MenuLink href="/prompt" ariaLabel="Go to the Prompt Library configuration page">
               <Book {...menuIconProps} />
             </MenuLink>
+            <MenuItem tooltip="Lida">
+               <MenuLink href="/lida" ariaLabel="Go to the Lida visualization page">
+                 <AreaChart {...menuIconProps} />
+               </MenuLink>
+             </MenuItem>
           </MenuItem>
           {user.isAdmin && (
              <>
