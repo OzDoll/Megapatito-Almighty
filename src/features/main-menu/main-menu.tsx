@@ -43,12 +43,12 @@ export const MainMenu = async () => {
             <MenuLink href="/prompt" ariaLabel="Go to the Prompt Library configuration page">
               <Book {...menuIconProps} />
             </MenuLink>
-            <MenuItem tooltip="Lida">
-               <MenuLink href="/lida" ariaLabel="Go to the Lida visualization page">
+          </MenuItem>
+          <MenuItem tooltip="Lida">
+            <MenuLink href="/lida" ariaLabel="Go to the Lida visualization page">
                  <AreaChart {...menuIconProps} />
                </MenuLink>
-             </MenuItem>
-          </MenuItem>
+            </MenuItem>
           {user.isAdmin && (
              <>
              <MenuItem tooltip="Persona">
