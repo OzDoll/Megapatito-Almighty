@@ -8,6 +8,7 @@ const requireAuth: string[] = [
   "/unauthorized",
   "/persona",
   "/prompt"
+  "/lida"
 ];
 const requireAdmin: string[] = [
   "/reporting",
@@ -50,5 +51,6 @@ export const config = {
     "/api/images:path*",
     "/chat/:path*",
     "/persona/:path*", // Added to match persona path
+    "/lida/:path*", // Add the new path matcher here
   ],
 };
