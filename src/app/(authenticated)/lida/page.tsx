@@ -6,8 +6,8 @@ const LidaPage: React.FC = () => {
   const lidaAppUrl = 'https://patitolida.azurewebsites.net';
 
   return (
-    <div style={{ width: '100%', height: '100vh' }}> {/* This div takes up the full height of the viewport */}
-      <h1>Lida Integration</h1>
+    // Use Tailwind CSS classes to set the full viewport width and height, remove default margin and padding
+    <div className="w-full h-screen p-0 m-0">
       <LidaEmbed src={lidaAppUrl} />
     </div>
   );
