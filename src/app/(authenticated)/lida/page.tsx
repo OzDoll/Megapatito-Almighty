@@ -1,9 +1,9 @@
 // pages/lida.tsx
 import React from 'react';
-import LidaEmbed from '../components/LidaEmbed'; // Adjust the import path to where you saved LidaEmbed.tsx
+import LidaEmbed from '@/features/lida-page/LidaEmbed'; // Make sure the path is correct
 
 const LidaPage: React.FC = () => {
-  const lidaAppUrl = 'https://patitolida.azurewebsites.net/'; // Replace with the actual URL of your web app
+  const lidaAppUrl = 'https://patitolida.azurewebsites.net'; // The actual URL of your Lida web app
 
   return (
     <div>
