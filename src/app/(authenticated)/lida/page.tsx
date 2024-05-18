@@ -3,7 +3,7 @@ import React from 'react';
 import LidaEmbed from '@/features/lida-page/LidaEmbed';
 
 const LidaPage: React.FC = () => {
-  const lidaAppUrl = process.env.LIDA_ENDPOINT!;
+  const lidaAppUrl = process.env.LIDA_ENDPOINT;
 
   return (
     // Use Tailwind CSS classes to set the full viewport width and height, remove default margin and padding
