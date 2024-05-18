@@ -18,13 +18,14 @@ interface LoginProps {
 
 export const LogIn: FC<LoginProps> = (props) => {
   return (
-    // Wrap the Card component in a flex container that centers its children
-    <div className="flex justify-center items-center min-h-screen"> {/* This container will center the Card component */}
-      <Card className="flex gap-2 flex-col min-w-[300px] items-center">
+    // This container will center the Card component both horizontally and vertically
+    <div className="flex justify-center items-center min-h-screen w-full"> {/* Ensure full width */}
+      {/* Ensure the Card component itself is a flex container with centered items */}
+      <Card className="flex flex-col items-center gap-2 min-w-[300px] w-full max-w-md mx-auto"> {/* Set max width and auto margins */}
         <CardHeader className="gap-2 w-full text-center">
           <CardTitle className="text-2xl flex gap-2 justify-center items-center">
             <Avatar className="h-8 w-8">
-              <AvatarImage src={"ai-icon.png"} />
+              <AvatarImage src={"ai-icon.png"} alt="AI Logo" />
             </Avatar>
             <span className="text-primary">{AI_NAME}</span>
           </CardTitle>
@@ -32,14 +33,14 @@ export const LogIn: FC<LoginProps> = (props) => {
             Login in with your Microsoft Account
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-4 place-items-center">
-        <Button onClick={() => signIn("github")}>GitHub</Button>
-          <Button onClick={() => signIn("azure-ad")}>Azure</Button>
-          {props.isDevMode ? (
-            <Button onClick={() => signIn("localdev")}>
+        <CardContent className="flex flex-col items-center gap-4 w-full"> {/* Use flex column layout with centered items */}
+          <Button className="w-full" onClick={() => signIn("github")}>GitHub</Button>
+          <Button className="w-full" onClick={() => signIn("azure-ad")}>Azure</Button>
+          {props.isDevMode && (
+            <Button className="w-full" onClick={() => signIn("localdev")}>
               Basic Auth (DEV ONLY)
             </Button>
-          ) : null}
+          )}
         </CardContent>
       </Card>
     </div>
