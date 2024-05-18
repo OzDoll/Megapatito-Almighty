@@ -33,8 +33,8 @@ export const LogIn: FC<LoginProps> = (props) => {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 place-items-center">
-        <Button onClick={() => signIn("github", { callbackUrl: "https://megapatitoari-webapp-pvwo3gvszv7fc.azurewebsites.net/api/auth/callback/github" })}>GitHub</Button>
-          <Button onClick={() => signIn("azure-ad")}>Microsoft Employee</Button>
+        <Button onClick={() => signIn("github")}>GitHub</Button>
+          <Button onClick={() => signIn("azure-ad")}>Azure</Button>
           {props.isDevMode ? (
             <Button onClick={() => signIn("localdev")}>
               Basic Auth (DEV ONLY)
