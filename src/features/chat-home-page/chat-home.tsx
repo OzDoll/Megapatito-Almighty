@@ -31,9 +31,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
               {AI_NAME}
             </>
           }
-          description={
-            <div className="text-center">{AI_DESCRIPTION}</div> // Centered description
-          }
+          description={AI_DESCRIPTION}
         ></Hero>
         <div className="container max-w-5xl flex gap-10 flex-col justify-center items-center">
           <div>
