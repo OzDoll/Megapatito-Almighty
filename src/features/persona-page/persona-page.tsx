@@ -14,7 +14,7 @@ export const ChatPersonaPage: FC<ChatPersonaProps> = (props) => {
     <ScrollArea className="flex-1">
       <main className="flex flex-1 flex-col">
         <PersonaHero />
-        <div className="container max-w-4xl py-3">
+        <div className="container max-w-4xl py-10">
           <div className="grid grid-cols-3 gap-3">
             {props.personas.map((persona) => {
               return (
