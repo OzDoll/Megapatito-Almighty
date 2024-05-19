@@ -1,7 +1,7 @@
 # Introduction
 
 <p align="center">
-  <img src="https://i.imgur.com/9KKYgdc.png">
+  <img src="https://github.com/OzDoll/Megapatito-Copilot/blob/main/src/public/banner.png">
 </p>
 
 Megapatito Almighty is based in the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/) and Microsoft Research.
