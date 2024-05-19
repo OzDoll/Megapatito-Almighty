@@ -33,7 +33,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
           }
           description={AI_DESCRIPTION}
         ></Hero>
-        <div className="container max-w-5xl flex gap-10 flex-col justify-center items-center">
+        <div className="container max-w-5xl flex gap-20 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
 
