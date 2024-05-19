@@ -4,7 +4,7 @@
   <img src="https://i.imgur.com/9KKYgdc.png">
 </p>
 
-Megapatito AI is a project powered by Azure OpenAI, based in the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/).
+Megapatito Almighty is based in the [Azure Chat Solution Accelerator](https://github.com/microsoft/azurechat/) and Microsoft Research.
 
 ### Azure Portal Deployment
 
