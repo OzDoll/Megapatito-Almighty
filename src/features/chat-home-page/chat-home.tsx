@@ -21,6 +21,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
         <Hero
           title={
             <div className="flex flex-col items-center"> {/* Flex container with column direction */}
+             <div className="mb-px"> {/* Margin bottom */}
               <Image
                 src={"/ai-icon.png"}
                 width={60}
@@ -28,6 +29,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
                 quality={100}
                 alt="ai-icon"
               />
+              </div>
               <span>{AI_NAME}</span> {/* AI_NAME in a separate block */}
             </div>
           }
