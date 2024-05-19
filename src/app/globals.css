@@ -59,8 +59,14 @@
   }
 }
 
-/* version header */
+/* Add this to your CSS file */
 .ai-description-style {
   font-size: 8px;
-  font-family: 'Roboto Mono', monospace; /* 'Roboto Mono' is loaded in the project */
+  font-family: 'Roboto Mono', monospace; /* Ensure 'Roboto Mono' is loaded in your project */
+}
+
+/* Target the description within the Hero component specifically */
+.hero-description .ai-description-style {
+  font-size: 8px;
+  font-family: 'Roboto Mono', monospace;
 }

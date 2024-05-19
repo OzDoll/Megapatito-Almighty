@@ -21,17 +21,18 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
       <Hero
   title={
     <div className="flex flex-col items-center"> {/* Flex container with column direction */}
-      <div className="mb-px rounded-full overflow-hidden"> {/* Add rounded-full class for round border */}
+      
         <Image
           src={"/banner-xm.png"} // Change the image path         
           quality={100}
           alt="ai-icon"
         />
-      </div> {/* Closing tag for the div with mb-px class */}
+      
     </div>
   }
   //To remove the description, pass an empty string, element is required so cannot be removed entirely
-  description={<p className="ai-description-style">{AI_DESCRIPTION}</p>}
+  description={AI_DESCRIPTION} // Pass AI_DESCRIPTION as a string
+  descriptionClassName="ai-description-style" // Assuming Hero component accepts this prop
 ></Hero>
         <div className="container max-w-5xl flex gap-8 flex-col">
           <div>
