@@ -8,7 +8,7 @@ import { Hero } from "@/features/ui/hero";
 import { ScrollArea } from "@/features/ui/scroll-area";
 import Image from "next/image";
 import { FC } from "react";
-@ import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 interface ChatPersonaProps {
   personas: PersonaModel[];
