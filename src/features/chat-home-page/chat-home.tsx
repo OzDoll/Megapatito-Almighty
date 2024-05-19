@@ -30,8 +30,8 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
       </div> {/* Closing tag for the div with mb-px class */}
     </div>
   }
-  // Since you want to remove the description, you can either pass an empty string or remove the prop entirely if it's optional
-  description=""
+  //To remove the description, pass an empty string, element is required so cannot be removed entirely
+  description={AI_DESCRIPTION}
 ></Hero>
         <div className="container max-w-5xl flex gap-8 flex-col">
           <div>

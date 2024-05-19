@@ -10,7 +10,7 @@ export const Hero: FC<HeroProps> = (props) => {
   return (
     <div className="border-b w-full py-10">
       <div className="container max-w-5xl flex flex-col justify-center items-center">
-        
+        <div className="flex gap-3 flex-col items-start justify-center items-center">
           <h1 className="text-4xl font-bold flex gap-2 items-center">
             {props.title}
           </h1>
