@@ -8,6 +8,7 @@ import { Hero } from "@/features/ui/hero";
 import { ScrollArea } from "@/features/ui/scroll-area";
 import Image from "next/image";
 import { FC } from "react";
+@ import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 interface ChatPersonaProps {
   personas: PersonaModel[];
@@ -31,7 +32,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
     </div>
   }
   //To remove the description, pass an empty string, element is required so cannot be removed entirely
-  description={AI_DESCRIPTION}
+  description={<p className="ai-description-style">{AI_DESCRIPTION}</p>}
 ></Hero>
         <div className="container max-w-5xl flex gap-8 flex-col">
           <div>

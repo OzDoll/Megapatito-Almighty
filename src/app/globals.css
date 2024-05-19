@@ -57,3 +57,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* version header */
+.ai-description-style {
+  font-size: 8px;
+  font-family: 'Roboto Mono', monospace; /* 'Roboto Mono' is loaded in the project */
+}
