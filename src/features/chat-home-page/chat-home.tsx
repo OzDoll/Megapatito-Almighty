@@ -20,20 +20,20 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
       <main className="flex flex-1 flex-col gap-6 pb-6">
         <Hero
           title={
-            <>
+            <div className="flex flex-col items-center"> {/* Flex container with column direction */}
               <Image
                 src={"/ai-icon.png"}
                 width={60}
                 height={60}
                 quality={100}
                 alt="ai-icon"
-              />{" "}
-              {AI_NAME}
-            </>
+              />
+              <span>{AI_NAME}</span> {/* AI_NAME in a separate block */}
+            </div>
           }
           description={AI_DESCRIPTION}
         ></Hero>
-        <div className="container max-w-5xl flex gap-10 flex-col">
+        <div className="container max-w-5xl flex gap-8 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
 
