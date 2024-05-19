@@ -18,35 +18,23 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
   return (
     <ScrollArea className="flex-1">
       <main className="flex flex-1 flex-col gap-6 pb-6">
-      <Hero
-
-  title={
-
-    <div className="flex flex-col items-center"> {/* Flex container with column direction */}
-
-      <div className="mb-px rounded-full overflow-hidden"> {/* Add rounded-full class for round border */}
-
-        <Image
-
-          src={"/ai-icon.png"}
-
-          width={60}
-
-          height={60}
-
-          quality={100}
-
-          alt="ai-icon"
-
-        />
-
-      </div> {/* Closing tag for the div with mb-px class */}
-
-    </div>
-
-  }
-
-></Hero>
+        <Hero
+          title={
+            <div className="flex flex-col items-center"> {/* Flex container with column direction */}
+             <div className="mb-px">
+              <Image
+                src={"/ai-icon.png"}
+                width={60}
+                height={60}
+                quality={100}
+                alt="ai-icon"
+              />
+              </div>
+              <span>{AI_NAME}</span> {/* AI_NAME in a separate block */}
+            </div>
+          }
+          description={AI_DESCRIPTION}
+        ></Hero>
         <div className="container max-w-5xl flex gap-8 flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
