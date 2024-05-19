@@ -14,7 +14,7 @@ export const Hero: FC<HeroProps> = (props) => {
           <h1 className="text-4xl font-bold flex gap-2 items-center">
             {props.title}
           </h1>
-          <p className="text-muted-foreground max-w-x2">{props.description}</p>
+          <p className="text-muted-foreground max-w-x2 py-4">{props.description}</p>
         </div>
         <div className="grid grid-cols-3 gap-2">{props.children}</div>
       </div>
