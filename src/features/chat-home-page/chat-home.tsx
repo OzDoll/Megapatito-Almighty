@@ -21,11 +21,11 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
         <Hero
           title={
             <div className="flex flex-col items-center"> {/* Flex container with column direction */}
-             <div className="mb-px"> {/* Margin bottom */}
+             <div className="mb-2px"> {/* Margin bottom */}
               <Image
-                src={"/ai-icon.png"}
-                width={60}
-                height={60}
+                src={"/banner-xm.png"}
+                width={100}
+                height={100}
                 quality={100}
                 alt="ai-icon"
               />
