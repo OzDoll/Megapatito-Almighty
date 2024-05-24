@@ -22,7 +22,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
     <ScrollArea className="flex-1 p-4">
       <main className="flex flex-1 flex-col gap-6 pb-6">
         {/* Updated header with title and subtitle */}
-        <div className="bg-background border-b flex flex-col items-center py-3 px-4">
+        <div className="bg-background text-primary border-b flex flex-col items-center py-3 px-4">
         <span>{headerTitle}</span>
           <div className="text-sm text-muted-foreground flex gap-1 items-center">
             <Cat size={17} />
