@@ -25,7 +25,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
         <div className="bg-background border-b flex flex-col items-center py-3 px-4">
         <span>{headerTitle}</span>
           <div className="text-sm text-muted-foreground flex gap-1 items-center">
-            <Cat size={18} />
+            <Cat size={17} />
             <span>{headerSubtitle}</span>
           </div>
         </div>
