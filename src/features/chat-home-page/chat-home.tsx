@@ -67,7 +67,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
       </main>
        {/* Footer */}
        <footer className="text-center text-sm text-muted-foreground py-4">
-        © {new Date().getFullYear()}. MIT license.
+       MIT license © {new Date().getFullYear()} Almighty.
       </footer>
     </ScrollArea>
   );
