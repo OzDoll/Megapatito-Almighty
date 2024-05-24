@@ -12,10 +12,19 @@ interface ChatPersonaProps {
 }
 
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
+  // Define the title for the header
+  const headerTitle = "Welcome to Megapatito"; // Replace with the title you want
+
   return (
-    <ScrollArea className="flex-1 p-4"> {/* Added padding to the ScrollArea */}
+    <ScrollArea className="flex-1 p-4">
       <main className="flex flex-1 flex-col gap-6 pb-6">
-        <div className="container max-w-5xl mx-auto flex gap-8 flex-col px-4 pt-6"> {/* Added padding to the top and sides */}
+        {/* Header with the same UI format */}
+        <div className="bg-background border-b flex items-center py-2 px-4">
+          <div className="container max-w-5xl mx-auto">
+            <h1 className="text-xl font-bold">{headerTitle}</h1>
+          </div>
+        </div>
+        <div className="container max-w-5xl mx-auto flex gap-8 flex-col px-4 pt-6">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
             {props.extensions && props.extensions.length > 0 ? (
