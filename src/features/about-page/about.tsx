@@ -11,13 +11,11 @@ const About: FC = () => {
         <Hero
           title={
             <>
-              <Image
-                src={"/ai-icon.png"}
-                width={60}
-                height={60}
-                quality={100}
-                alt="AI Logo"
-              />
+               <Image
+          src={"/banner-xm.png"} // Change the image path         
+          quality={100}
+          alt="ai-icon"
+        />      
               <span className="ml-2">{AI_NAME}</span> {/* Added a span with margin-left for spacing */}
             </>
           }
@@ -35,3 +33,4 @@ const About: FC = () => {
 };
 
 export default About;
+
