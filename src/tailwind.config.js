@@ -13,6 +13,9 @@ module.exports = {
       screens: {},
     },
     extend: {
+      fontFamily: {
+        sans: ['Roboto Mono', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
