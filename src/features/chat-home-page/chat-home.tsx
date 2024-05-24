@@ -19,17 +19,17 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
   const headerSubtitle = VERSION; // Replace with the subtitle you want
 
   return (
-    <ScrollArea className="flex-1 p-4">
+    <ScrollArea className="flex-1">
       <main className="flex flex-1 flex-col gap-6 pb-6">
         {/* Updated header with title and subtitle */}
         <div className="bg-background text-primary border-b flex flex-col items-center py-3 px-4">
-        <span className="text-xl font-semibold">{headerTitle}</span>
+        <span className="text-base font-semibold">{headerTitle}</span>
           <div className="text-sm text-muted-foreground flex gap-1 items-center">
             <Cat size={17} />
             <span>{headerSubtitle}</span>
           </div>
         </div>
-        <div className="container max-w-5xl mx-auto flex gap-8 flex-col px-4 pt-6">
+        <div className="container max-w-5xl mx-auto flex gap-8 flex-col px-4 p-4">
           <div>
             <h2 className="text-2xl font-bold mb-3">Extensions</h2>
             {props.extensions && props.extensions.length > 0 ? (
