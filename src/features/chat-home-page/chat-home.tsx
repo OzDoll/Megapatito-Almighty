@@ -6,6 +6,7 @@ import { PersonaModel } from "@/features/persona-page/persona-services/models";
 import { ScrollArea } from "@/features/ui/scroll-area";
 import { Cat } from "lucide-react"; // Assuming you're using lucide-react for icons
 import { FC } from "react";
+import { AI_NAME, VERSION } from "../theme/theme-config";
 
 interface ChatPersonaProps {
   personas: PersonaModel[];
@@ -14,14 +15,14 @@ interface ChatPersonaProps {
 
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
   // Define the title and subtitle for the header
-  const headerTitle = "Megapatito Almighty"; // Replace with the title you want
-  const headerSubtitle = "Version 0.4 - May 2024"; // Replace with the subtitle you want
+  const headerTitle = {AI_NAME}; // Replace with the title you want
+  const headerSubtitle = {VERSION}; // Replace with the subtitle you want
 
   return (
     <ScrollArea className="flex-1 p-4">
       <main className="flex flex-1 flex-col gap-6 pb-6">
         {/* Updated header with title and subtitle */}
-        <div className="bg-background border-b flex flex-col items-center py-4 px-4">
+        <div className="bg-background border-b flex flex-col items-center py-3 px-4">
         <span>{headerTitle}</span>
           <div className="text-sm text-muted-foreground flex gap-1 items-center">
             <Cat size={18} />
