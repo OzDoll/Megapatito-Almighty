@@ -15,8 +15,8 @@ interface ChatPersonaProps {
 
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
   // Define the title and subtitle for the header
-  const headerTitle = {AI_NAME}; // Replace with the title you want
-  const headerSubtitle = {VERSION}; // Replace with the subtitle you want
+  const headerTitle = AI_NAME; // Replace with the title you want
+  const headerSubtitle = VERSION; // Replace with the subtitle you want
 
   return (
     <ScrollArea className="flex-1 p-4">
