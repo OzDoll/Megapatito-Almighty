@@ -9,6 +9,8 @@ const requireAuth: string[] = [
   "/persona",
   "/prompt", // Added missing comma here
   "/lida", // Added new path for Lida
+  "/taskweaver", // Added new path for Taskweaver
+  "/about", // Added new path for About page
 ];
 const requireAdmin: string[] = [
   "/reporting",
@@ -52,5 +54,7 @@ export const config = {
     "/chat/:path*",
     "/persona/:path*", // Added to match persona path
     "/lida/:path*", // Added new path matcher for Lida
+    "/taskweaver/:path*", // Added new path for Taskweaver
+    "/about/:path*", // Added new path for About page
   ],
 };

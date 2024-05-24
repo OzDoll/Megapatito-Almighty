@@ -15,6 +15,7 @@ import {
   Bot,
   AreaChart,
   Origami,
+  Album,
 } from "lucide-react";
 import { getCurrentUser } from "../auth-page/helpers";
 import { MenuLink } from "./menu-link";
@@ -50,11 +51,16 @@ export const MainMenu = async () => {
                  <AreaChart {...menuIconProps} />
                </MenuLink>
             </MenuItem>
-            <MenuItem tooltip="Taskweaver">
-            <MenuLink href="/taskweaver" ariaLabel="Go to Taskweaver planner page">
+          <MenuItem tooltip="Taskweaver">
+           <MenuLink href="/taskweaver" ariaLabel="Go to Taskweaver planner page">
                  <Origami {...menuIconProps} />
                </MenuLink>
-            </MenuItem>
+          </MenuItem>
+          <MenuItem tooltip="About">
+            <MenuLink href="/about" ariaLabel="Go to the About page">
+                 <Album {...menuIconProps} />
+               </MenuLink>
+          </MenuItem>  
           {user.isAdmin && (
              <>
              <MenuItem tooltip="Persona">
