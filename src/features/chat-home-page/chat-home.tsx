@@ -14,7 +14,7 @@ interface ChatPersonaProps {
 
 export const ChatHome: FC<ChatPersonaProps> = (props) => {
   // Define the title and subtitle for the header
-  const headerTitle = "Welcome to Megapatito"; // Replace with the title you want
+  const props.chatThread.personaMessageTitle = "Welcome to Megapatito"; // Replace with the title you want
   const headerSubtitle = "Version 0.4"; // Replace with the subtitle you want
 
   return (
