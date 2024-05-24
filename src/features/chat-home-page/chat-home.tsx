@@ -65,6 +65,10 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
         </div>
         <AddExtension />
       </main>
+       {/* Footer */}
+       <footer className="text-center text-sm text-muted-foreground py-4">
+        © {new Date().getFullYear()}. MIT license.
+      </footer>
     </ScrollArea>
   );
 };
