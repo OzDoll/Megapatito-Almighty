@@ -19,7 +19,7 @@ const About: FC = () => {
     </div>
   }
   //To remove the description, pass an empty string, element is required so cannot be removed entirely
-  description="" // {AI_DESCRIPTION} Pass AI_DESCRIPTION as a string
+  description="And now I see with eye serene, the very pulse of the machine." // {AI_DESCRIPTION} Pass AI_DESCRIPTION as a string
 ></Hero>
       </main>
     </ScrollArea>
