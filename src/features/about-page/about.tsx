@@ -7,26 +7,20 @@ import { FC } from "react";
 const About: FC = () => {
   return (
     <ScrollArea className="flex-1">
-      <main className="flex flex-1 flex-col gap-6 pb-6">
-        <Hero
-          title={
-            <>
-               <Image
-          src={"/banner-xm.png"} // Change the image path         
+           <main className="flex flex-1 flex-col gap-6 pb-6">
+      <Hero
+  title={
+    <div className="flex flex-col items-center"> {/* Flex container with column direction */}      
+        <Image
+          src={"/banner.png"} // Change the image path         
           quality={100}
           alt="ai-icon"
         />      
-              <span className="ml-2">{AI_NAME}</span> {/* Added a span with margin-left for spacing */}
-            </>
-          }
-          description={AI_DESCRIPTION}
-        />
-        {/* Add additional content for the About page here */}
-        <section>
-          <h2>About {AI_NAME}</h2>
-          <p>{/* Add more detailed information about the AI here */}</p>
-        </section>
-        {/* You can add more sections as needed */}
+    </div>
+  }
+  //To remove the description, pass an empty string, element is required so cannot be removed entirely
+  description="" // {AI_DESCRIPTION} Pass AI_DESCRIPTION as a string
+></Hero>
       </main>
     </ScrollArea>
   );
