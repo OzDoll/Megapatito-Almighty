@@ -1,4 +1,4 @@
-import { Loader } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 import { FC } from "react";
 import { cn } from "./lib";
 
@@ -9,5 +9,5 @@ interface Props {
 export const LoadingIndicator: FC<Props> = (props) => {
   if (!props.isLoading) return null;
 
-  return <Loader className={cn("animate-spin")} size={18} />;
+  return <LoaderCircle className={cn("animate-spin")} size={18} />;
 };
