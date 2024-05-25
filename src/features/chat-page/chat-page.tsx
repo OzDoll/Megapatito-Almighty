@@ -37,9 +37,19 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
 
   const { messages, loading } = useChat();
 
-  const current = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  useChatScrollAnchor({ ref: current });
+  useChatScrollAnchor({ ref: chatContainerRef });
+
+  // Scroll to bottom whenever messages update
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      const lastMessageElement = chatContainerRef.current.lastElementChild;
+      if (lastMessageElement) {
+        lastMessageElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+    }
+  }, [messages]);
 
   return (
     <main className="flex flex-1 relative flex-col">
@@ -48,27 +58,25 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
         chatDocuments={props.chatDocuments}
         extensions={props.extensions}
       />
-      <ChatMessageContainer ref={current}>
+      <ChatMessageContainer ref={chatContainerRef}>
         <ChatMessageContentArea>
-          {messages.map((message) => {
-            return (
-              <ChatMessageArea
-                key={message.id}
-                profileName={message.name}
-                role={message.role}
-                onCopy={() => {
-                  navigator.clipboard.writeText(message.content);
-                }}
-                profilePicture={
-                  message.role === "assistant"
-                    ? "/ai-icon.png"
-                    : session?.user?.image
-                }
-              >
-                <MessageContent message={message} />
-              </ChatMessageArea>
-            );
-          })}
+          {messages.map((message) => (
+            <ChatMessageArea
+              key={message.id}
+              profileName={message.name}
+              role={message.role}
+              onCopy={() => {
+                navigator.clipboard.writeText(message.content);
+              }}
+              profilePicture={
+                message.role === "assistant"
+                  ? "/ai-icon.png"
+                  : session?.user?.image
+              }
+            >
+              <MessageContent message={message} />
+            </ChatMessageArea>
+          ))}
           {loading === "loading" && <ChatLoading />}
         </ChatMessageContentArea>
       </ChatMessageContainer>
