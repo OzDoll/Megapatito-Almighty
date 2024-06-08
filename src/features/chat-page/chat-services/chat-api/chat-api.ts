@@ -1,6 +1,8 @@
+// Directives and imports for server-side execution and importing necessary modules and functions.
 "use server";
 import "server-only";
 
+// Importing various utilities and services for authentication, configuration, and chat functionalities.
 import { getCurrentUser } from "@/features/auth-page/helpers";
 import { CHAT_DEFAULT_SYSTEM_PROMPT } from "@/features/theme/theme-config";
 import { ChatCompletionStreamingRunner } from "openai/resources/beta/chat/completions";
@@ -18,18 +20,23 @@ import { GetDynamicExtensions } from "./chat-api-dynamic-extensions";
 import { ChatApiExtensions } from "./chat-api-extension";
 import { ChatApiMultimodal } from "./chat-api-multimodal";
 import { OpenAIStream } from "./open-ai-stream";
+
+// Type definition for different chat interaction types.
 type ChatTypes = "extensions" | "chat-with-file" | "multimodal";
 
+// Main function to handle chat API entry, processing user prompts and managing chat threads.
 export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
+  // Ensures the chat thread is valid and authorized.
   const currentChatThreadResponse = await EnsureChatThreadOperation(props.id);
 
+  // If the chat thread is not OK, returns an unauthorized response.
   if (currentChatThreadResponse.status !== "OK") {
     return new Response("", { status: 401 });
   }
 
   const currentChatThread = currentChatThreadResponse.response;
 
-  // promise all to get user, history and docs
+  // Concurrently fetches user details, chat history, related documents, and extensions.
   const [user, history, docs, extension] = await Promise.all([
     getCurrentUser(),
     _getHistory(currentChatThread),
@@ -40,12 +47,14 @@ export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
       signal,
     }),
   ]);
+
+  // Prepends the system prompt to the chat thread's persona message.
   // Starting values for system and user prompt
   // Note that the system message will also get prepended with the extension execution steps. Please see ChatApiExtensions method.
   currentChatThread.personaMessage = `${CHAT_DEFAULT_SYSTEM_PROMPT} \n\n ${currentChatThread.personaMessage}`;
 
+  // Determines the type of chat based on the presence of multimodal data, documents, or extensions.
   let chatType: ChatTypes = "extensions";
-
   if (props.multimodalImage && props.multimodalImage.length > 0) {
     chatType = "multimodal";
   } else if (docs.length > 0) {
@@ -54,7 +63,7 @@ export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
     chatType = "extensions";
   }
 
-  // save the user message
+  // Saves the user message to the chat thread.
   await CreateChatMessage({
     name: user.name,
     content: props.message,
@@ -65,6 +74,7 @@ export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
 
   let runner: ChatCompletionStreamingRunner;
 
+  // Initializes the appropriate chat runner based on the determined chat type.
   switch (chatType) {
     case "chat-with-file":
       runner = await ChatApiRAG({
@@ -93,6 +103,7 @@ export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
       break;
   }
 
+  // Creates a streaming response to send the runner's output to the client.
   const readableStream = OpenAIStream({
     runner: runner,
     chatThread: currentChatThread,
@@ -106,6 +117,7 @@ export const ChatAPIEntry = async (props: UserPrompt, signal: AbortSignal) => {
   });
 };
 
+// Helper function to fetch chat history.
 const _getHistory = async (chatThread: ChatThreadModel) => {
   const historyResponse = await FindTopChatMessagesForCurrentUser(
     chatThread.id
@@ -121,24 +133,23 @@ const _getHistory = async (chatThread: ChatThreadModel) => {
   return [];
 };
 
+// Helper function to fetch documents related to the chat thread.
 const _getDocuments = async (chatThread: ChatThreadModel) => {
   const docsResponse = await FindAllChatDocuments(chatThread.id);
-
   if (docsResponse.status === "OK") {
     return docsResponse.response;
   }
-
   console.error("🔴 Error on AI search:", docsResponse.errors);
   return [];
 };
 
+// Helper function to fetch and apply chat extensions.
 const _getExtensions = async (props: {
   chatThread: ChatThreadModel;
   userMessage: string;
   signal: AbortSignal;
 }) => {
   const extension: Array<any> = [];
-
   const response = await GetDefaultExtensions({
     chatThread: props.chatThread,
     userMessage: props.userMessage,
@@ -147,7 +158,6 @@ const _getExtensions = async (props: {
   if (response.status === "OK" && response.response.length > 0) {
     extension.push(...response.response);
   }
-
   const dynamicExtensionsResponse = await GetDynamicExtensions({
     extensionIds: props.chatThread.extension,
   });
@@ -157,6 +167,5 @@ const _getExtensions = async (props: {
   ) {
     extension.push(...dynamicExtensionsResponse.response);
   }
-
   return extension;
 };
