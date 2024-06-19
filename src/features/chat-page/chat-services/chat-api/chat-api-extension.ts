@@ -23,7 +23,7 @@ export const ChatApiExtensions = async (props: {
       model: "",
       temperature: 0.1,
       top_p: 0.6,
-      max_tokens: 40000,
+      max_tokens: 4096,
       stream: true,
       messages: [
         {
