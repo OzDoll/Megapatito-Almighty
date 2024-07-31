@@ -23,8 +23,8 @@ export const ChatApiExtensions = async (props: {
   return openAI.beta.chat.completions.runTools(
     {
       model: "", // Model to be used for the chat completion.
-      temperature: 0.0001, // Temperature setting for the model (controls randomness).
-      top_p: 0.5, // Top-p setting for nucleus sampling.
+      temperature: 0.01, // Temperature setting for the model (controls randomness).
+      top_p: 0.7, // Top-p setting for nucleus sampling.
       max_tokens: 4096, // Maximum number of tokens in the response.
       stream: true, // Enable streaming of the response.
       messages: [
